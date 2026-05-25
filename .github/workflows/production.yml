@@ -1,0 +1,70 @@
+on:
+  push:
+    branches:
+      - main
+
+name: Deploy website on push
+
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: mbstring, bcmath, xml
+          tools: composer
+
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: 🔨 Build Project
+        run: |
+          php artisan optimize:clear
+          php artisan storage:link || true
+          npm run build
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.pro_ftp_host }}
+          username: ${{ secrets.pro_ftp_username }}
+          password: ${{ secrets.pro_ftp_password }}
+          exclude: |
+            **/tests/**
+            **/storage/**
+            **/bootstrap/cache/**
+            .git/**
+            **/.git/**
+            **/node_modules/**
+            **/vendor/**
+            **/.env
+            .github/**
+            .editorconfig
+            .gitattributes
+            .gitignore
+            jsconfig.json
+            package-lock.json
+            package.json
+            phpunit.xml
+            postcss.config.js
+            tailwind.config.js
+            vite.config.js
+            .env
+            .env.dev
+            .env.example
+          dangerousCleanSlate: false
