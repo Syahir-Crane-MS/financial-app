@@ -32,12 +32,10 @@ jobs:
       - name: Install Node.js dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Create SQLite Database for Build
-        run: |
-          mkdir -p database
-          touch database/database.sqlite
-
       - name: 🔨 Build Project
+        env:
+          CACHE_STORE: array
+          DB_CONNECTION: array
         run: |
           php artisan optimize:clear
           php artisan storage:link || true
