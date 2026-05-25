@@ -1,0 +1,169 @@
+import { create } from "zustand";
+
+export const useUserStore = create(() => ({
+    age: [
+        { value: "20" },
+        { value: "21" },
+        { value: "22" },
+        { value: "23" },
+        { value: "24" },
+        { value: "25" },
+        { value: "26" },
+        { value: "27" },
+        { value: "28" },
+        { value: "29" },
+        { value: "30" },
+        { value: "31" },
+        { value: "32" },
+        { value: "33" },
+        { value: "34" },
+        { value: "35" },
+        { value: "36" },
+        { value: "37" },
+        { value: "38" },
+        { value: "39" },
+        { value: "40" },
+        { value: "41" },
+        { value: "42" },
+        { value: "43" },
+        { value: "44" },
+        { value: "45" },
+        { value: "46" },
+        { value: "47" },
+        { value: "48" },
+        { value: "49" },
+        { value: "50" },
+        { value: "51" },
+        { value: "52" },
+        { value: "53" },
+        { value: "54" },
+        { value: "55" },
+        { value: "56" },
+        { value: "57" },
+        { value: "58" },
+        { value: "59" },
+        { value: "60" },
+        { value: "61" },
+        { value: "62" },
+        { value: "63" },
+        { value: "64" },
+        { value: "65" },
+        { value: "66" },
+        { value: "67" },
+        { value: "68" },
+        { value: "69" },
+        { value: "70" },
+    ],
+
+    gender: [
+        { label: "Male", value: "male" },
+        { label: "Female", value: "female" },
+    ],
+
+    role: [
+        { label: "Super Admin", value: "superadmin" },
+        { label: "Admin", value: "admin" },
+        { label: "User", value: "user" },
+    ],
+
+    year: [
+        { value: "2020" },
+        { value: "2021" },
+        { value: "2022" },
+        { value: "2023" },
+        { value: "2024" },
+        { value: "2025" },
+        { value: "2026" },
+        { value: "2027" },
+        { value: "2028" },
+        { value: "2029" },
+        { value: "2030" },
+    ],
+
+    month: [
+        { label: "January", value: "1" },
+        { label: "February", value: "2" },
+        { label: "March", value: "3" },
+        { label: "April", value: "4" },
+        { label: "May", value: "5" },
+        { label: "June", value: "6" },
+        { label: "July", value: "7" },
+        { label: "August", value: "8" },
+        { label: "September", value: "9" },
+        { label: "October", value: "10" },
+        { label: "November", value: "11" },
+        { label: "December", value: "12" },
+    ],
+
+    status: [
+        { label: "Draft", value: "draft" },
+        { label: "New", value: "new" },
+        { label: "Pending", value: "pending" },
+        { label: "Approved", value: "approved" },
+        { label: "Confirmed", value: "confirmed" },
+        { label: "Rejected", value: "rejected" },
+        { label: "Expired", value: "expired" },
+    ],
+
+    level: [
+        { label: "Active", value: "active" },
+        { label: "Passive", value: "passive" },
+    ],
+
+    formStatus: [
+        { label: "Draft", value: "draft", bgcolor: "gray" },
+        { label: "Update", value: "update", bgcolor: "blue" },
+        { label: "Confirmed", value: "confirmed", bgcolor: "green" },
+    ],
+
+    country: [
+        { label: "Japan", value: "japan" },
+        { label: "Hong Kong", value: "hongkong" },
+        { label: "Taiwan", value: "taiwan" },
+        { label: "Malaysia", value: "malaysia" },
+        { label: "Singapore", value: "singapore" },
+        { label: "Thailand", value: "thailand" },
+        { label: "Philippines", value: "philippines" },
+        { label: "Indonesia", value: "indonesia" },
+        { label: "Cambodia", value: "cambodia" },
+        { label: "Australia", value: "australia" },
+    ],
+
+    income_type: [
+        { label: "Side Hustle", value: "side_hustle" },
+        { label: "Business", value: "business" },
+        { label: "Capitalist", value: "capitalist" },
+    ],
+
+    real_estate_type: [
+        { label: "Residential", value: "residential" },
+        { label: "Commercial", value: "commercial" },
+        { label: "Land / En-block", value: "land_enblock" },
+        { label: "Land", value: "land" },
+    ],
+
+    real_estate_category: [
+        { label: "Studio", value: "studio" },
+        { label: "Shop Lot", value: "shoplot" },
+        { label: "Agri Land", value: "agri_land" },
+        { label: "Semi-D", value: "semi_d" },
+        { label: "Bungalow", value: "bungalow" },
+        { label: "Terrace", value: "terrace" },
+    ],
+
+    learning_type: [
+        { label: "Beginner", value: "beginner" },
+        { label: "Intermediate", value: "intermediate" },
+        { label: "Advance", value: "advance" },
+    ],
+
+    learning_category: [
+        { label: "Business Mastery", value: "business_mastery" },
+        { label: "Financial Basic", value: "financial_basic" },
+    ],
+
+    eventStatus: [
+        { label: "True", value: "true" },
+        { label: "False", value: "false" },
+    ],
+}));

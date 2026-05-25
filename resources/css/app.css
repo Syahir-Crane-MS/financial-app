@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+div#reader {
+    min-height: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f4f4f4;
+}
+
+button#html5-qrcode-button-camera-permission,
+button#html5-qrcode-button-camera-start {
+    border: solid 1px #f4f4f4;
+    padding: 10px;
+    margin-bottom: 50px;
+    background: #eeeeee;
+}
+
+div#reader__scan_region,
+div#reader__dashboard_section_csr {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+div#reader__dashboard_section {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: unset !important;
+}
+
+#table-result td {
+    font-size: 18px;
+}

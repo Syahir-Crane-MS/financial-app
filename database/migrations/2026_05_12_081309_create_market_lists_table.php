@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('market_lists', function (Blueprint $table) {
+            $table->id();
+            $table->uuid();
+            $table->string('market_climate')->nullable();
+            $table->string('title')->nullable();
+            $table->string('description')->nullable();
+            $table->string('sub_description')->nullable();
+            $table->string('impact')->nullable();
+            $table->string('life_score')->nullable();
+            $table->timestamps();
+            $table->softDeletes()->nullable();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('market_lists');
+    }
+};
