@@ -23,7 +23,3 @@ networks:
     sail:
         external: true
         name: shared-net
-
-volumes:
-    sail-pgsql:
-        driver: local
