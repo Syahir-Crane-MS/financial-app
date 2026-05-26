@@ -56,7 +56,10 @@ const Card = ({ item }) => {
         }
     }, [tickCount, fullList.length]);
 
-    const seriesData = visibleData.map((d) => parseFloat(d.magnitude) || 0);
+    const seriesData = visibleData.map((d) => {
+        const value = parseFloat(d.magnitude) || 0;
+        return d.direction === "negative" ? -value : value;
+    });
     const xAxisData = Array.from({ length: seriesData.length }, (_, i) => i);
 
     const latestData = visibleData[visibleData.length - 1] || {
