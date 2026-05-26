@@ -294,13 +294,12 @@ export default function Dashboard({
                             boxShadow: 0,
                             borderRadius: "10px",
                             width: "23.95%",
-
                             cursor: "pointer",
                             transition:
                                 "background-color 0.3s ease, box-shadow 0.3s ease",
-
                             "&:hover": {
                                 bgcolor: "#e4f1d4",
+                                border: "solid 1px green",
                                 boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.05)",
                             },
                         }}

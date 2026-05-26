@@ -188,6 +188,7 @@ export default function Index({
                                                 <Terminal />
                                             )
                                         }
+                                        sx={{ bgcolor: "#36c0a4" }}
                                         disabled={!!loadingCommand}
                                         onClick={() =>
                                             handleRunCommand(command.command)
