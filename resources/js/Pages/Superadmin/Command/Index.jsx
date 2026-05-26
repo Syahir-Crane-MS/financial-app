@@ -103,104 +103,87 @@ export default function Index({
                     </CardContent>
                 </Card>
 
-                <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
                     {commandList.map((command, index) => (
-                        <Box
+                        <Card
                             key={index}
                             sx={{
-                                position: "relative",
-                                width: {
-                                    xs: "100%",
-                                    sm: "100%",
-                                    md: "50%",
-                                    lg: "25%",
-                                },
-                                padding: 1,
+                                width: "32.4%",
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "space-between",
+                                boxShadow: 0,
+                                borderRadius: "10px",
                             }}
                         >
-                            <Box
-                                sx={{
-                                    backgroundColor: "#f5f5f5",
-                                    padding: 0.5,
-                                    pl: 2.2,
-                                    position: "absolute",
-                                    top: 24,
-                                    left: 6.7,
-                                    zIndex: 2,
-                                    boxShadow:
-                                        "inset -1px -1px 1px rgb(226 226 226)",
-                                    borderTopRightRadius: 4,
-                                    borderBottomRightRadius: 4,
-                                }}
-                            >
-                                <Typography
-                                    variant="body1"
+                            <CardContent sx={{ p: 0 }}>
+                                <Box
                                     sx={{
-                                        maxWidth: "100%",
-                                        overflow: "hidden",
-                                        textOverflow: "ellipsis",
-                                        whiteSpace: "nowrap",
+                                        bgcolor: "#f5f5f5",
+                                        borderTopRightRadius: 4,
+                                        borderBottomRightRadius: 4,
+                                        width: "fit-content",
+                                        px: 2,
+                                        my: 2,
                                     }}
                                 >
-                                    {command.command}
-                                </Typography>
-                            </Box>
-                            <Card
-                                sx={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    justifyContent: "space-between",
-                                    height: "100%",
-                                }}
-                            >
-                                <CardContent>
+                                    <Typography
+                                        variant="body1"
+                                        sx={{
+                                            maxWidth: "100%",
+                                            overflow: "hidden",
+                                            textOverflow: "ellipsis",
+                                            whiteSpace: "nowrap",
+                                        }}
+                                    >
+                                        {command.command}
+                                    </Typography>
+                                </Box>
+
+                                <Box sx={{ px: 2, py: 1 }}>
                                     <Typography
                                         variant="subtitle2"
                                         sx={{
                                             color: "text.secondary",
                                             lineHeight: 1.2,
-                                            pt: 5,
                                         }}
                                     >
                                         {command.description}
                                     </Typography>
-                                </CardContent>
-                                <CardActions
-                                    sx={{ justifyContent: "flex-end" }}
+                                </Box>
+                            </CardContent>
+                            <CardActions sx={{ justifyContent: "flex-end" }}>
+                                <Button
+                                    size="small"
+                                    variant="contained"
+                                    startIcon={
+                                        loadingCommand === command.command ? (
+                                            <CircularProgress
+                                                size={16}
+                                                color="inherit"
+                                            />
+                                        ) : (
+                                            <Terminal />
+                                        )
+                                    }
+                                    sx={{ bgcolor: "#36c0a4" }}
+                                    disabled={!!loadingCommand}
+                                    onClick={() =>
+                                        handleRunCommand(command.command)
+                                    }
                                 >
-                                    <Button
-                                        size="small"
-                                        variant="contained"
-                                        startIcon={
-                                            loadingCommand ===
-                                            command.command ? (
-                                                <CircularProgress
-                                                    size={16}
-                                                    color="inherit"
-                                                />
-                                            ) : (
-                                                <Terminal />
-                                            )
-                                        }
-                                        sx={{ bgcolor: "#36c0a4" }}
-                                        disabled={!!loadingCommand}
-                                        onClick={() =>
-                                            handleRunCommand(command.command)
-                                        }
-                                    >
-                                        {loadingCommand === command.command
-                                            ? "Running..."
-                                            : "Run Command"}
-                                    </Button>
-                                </CardActions>
-                            </Card>
-                        </Box>
+                                    {loadingCommand === command.command
+                                        ? "Running..."
+                                        : "Run Command"}
+                                </Button>
+                            </CardActions>
+                        </Card>
                     ))}
                 </Box>
                 {lastCommandRun && (
                     <Box
                         sx={{
-                            backgroundColor: "#000",
+                            bgcolor: "#000",
                             color: "#0f0",
                             fontFamily: "monospace",
                             borderRadius: 1,
