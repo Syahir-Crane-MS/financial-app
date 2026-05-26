@@ -149,6 +149,8 @@ export const useUserStore = create(() => ({
         { label: "Semi-D", value: "semi_d" },
         { label: "Bungalow", value: "bungalow" },
         { label: "Terrace", value: "terrace" },
+        { label: "Duplex", value: "duplex" },
+        { label: "Condominium", value: "condominium" },
     ],
 
     learning_type: [

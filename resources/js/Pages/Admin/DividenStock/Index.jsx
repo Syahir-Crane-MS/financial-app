@@ -25,6 +25,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import QrCodeIcon from "@mui/icons-material/QrCode";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import PublicIcon from "@mui/icons-material/Public";
 
 import { QRCodeSVG } from "qrcode.react";
 
@@ -298,19 +299,29 @@ export default function Index({ stocks }) {
                         >
                             {title}
                         </Typography>
-                        <Button
-                            sx={{ bgcolor: "#36c0a4" }}
-                            onClick={handleOpenCreate}
-                        >
-                            <AddIcon
-                                sx={{ color: "white", fontSize: "16px" }}
-                            />
-                            <Typography
-                                sx={{ color: "white", fontSize: "12px" }}
+
+                        <Box>
+                            <IconButton
+                                component={"a"}
+                                target="_blank"
+                                href={route("public.dividen")}
                             >
-                                Add Fund
-                            </Typography>
-                        </Button>
+                                <PublicIcon />
+                            </IconButton>
+                            <Button
+                                sx={{ bgcolor: "#36c0a4" }}
+                                onClick={handleOpenCreate}
+                            >
+                                <AddIcon
+                                    sx={{ color: "white", fontSize: "16px" }}
+                                />
+                                <Typography
+                                    sx={{ color: "white", fontSize: "12px" }}
+                                >
+                                    Add Fund
+                                </Typography>
+                            </Button>
+                        </Box>
                     </CardContent>
                 </Card>
 

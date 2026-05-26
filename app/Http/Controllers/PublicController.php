@@ -25,7 +25,7 @@ class PublicController extends Controller
     }
     
     Public function dividen(){
-        $data = DividenStockMarket::get();
+        $data = DividenStockMarket::with(['list'])->get();
 
         return Inertia::render('Public/Dividen', [
             'data' => $data 
