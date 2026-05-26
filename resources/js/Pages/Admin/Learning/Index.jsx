@@ -4,7 +4,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 
 import ModalFlexible from "@/Components/ModalFlexible";
 
-import { Head, usePage, router, useForm } from "@inertiajs/react";
+import { Head, useForm } from "@inertiajs/react";
 
 import { useUserStore } from "@/Pages/Store/useUserStore";
 
@@ -19,7 +19,6 @@ import {
     IconButton,
     Dialog,
     DialogContent,
-    Icon,
 } from "@mui/material";
 
 import AddIcon from "@mui/icons-material/Add";

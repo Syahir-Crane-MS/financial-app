@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 
-import { Head, router } from "@inertiajs/react";
+import { Head } from "@inertiajs/react";
 
 import dayjs from "dayjs";
 
@@ -15,12 +15,7 @@ import {
     Typography,
     Breadcrumbs,
     Link,
-    Button,
-    IconButton,
-    Switch,
 } from "@mui/material";
-
-import VisibilityIcon from "@mui/icons-material/Visibility";
 
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 

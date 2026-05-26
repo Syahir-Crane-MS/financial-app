@@ -12,7 +12,7 @@ import {
     Avatar,
 } from "@mui/material";
 
-import { Link, usePage, router } from "@inertiajs/react";
+import { usePage } from "@inertiajs/react";
 
 import EventNoteIcon from "@mui/icons-material/EventNote";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";

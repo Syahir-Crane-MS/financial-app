@@ -1,5 +1,5 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head, useForm, router } from "@inertiajs/react";
+import { Head, router } from "@inertiajs/react";
 
 import { useState, useEffect } from "react";
 
@@ -8,12 +8,9 @@ import {
     Card,
     CardContent,
     Typography,
-    Dialog,
-    DialogContent,
     Breadcrumbs,
     Link,
     Button,
-    IconButton,
 } from "@mui/material";
 
 import LoopIcon from "@mui/icons-material/Loop";

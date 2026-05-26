@@ -12,11 +12,7 @@ import {
     Typography,
     Link,
     Breadcrumbs,
-    IconButton,
 } from "@mui/material";
-
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import DeleteIcon from "@mui/icons-material/Delete";
 
 import _ from "lodash";
 

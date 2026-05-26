@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 
 import { Box, Typography } from "@mui/material";
 
-import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import HomeIcon from "@mui/icons-material/Home";
 
 import { QRCodeSVG } from "qrcode.react";

@@ -4,7 +4,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 
 import ModalFlexible from "@/Components/ModalFlexible";
 
-import { Head, usePage, router, useForm } from "@inertiajs/react";
+import { Head, router, useForm } from "@inertiajs/react";
 
 import { useUserStore } from "@/Pages/Store/useUserStore";
 
@@ -20,15 +20,9 @@ import {
     Switch,
 } from "@mui/material";
 
-import AddIcon from "@mui/icons-material/Add";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
 import PersonIcon from "@mui/icons-material/Person";
 
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { initial } from "lodash";
 
 export default function Index({ events }) {
     const title = "Event Session";

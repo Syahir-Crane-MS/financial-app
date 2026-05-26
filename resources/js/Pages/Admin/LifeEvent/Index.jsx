@@ -1,10 +1,9 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import {
-    Box,
     Card,
     CardContent,
     Typography,
